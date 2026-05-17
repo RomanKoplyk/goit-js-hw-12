@@ -32,7 +32,7 @@ export function createGallery(images, isAppend = false) {
   } else {
     galleryContainer.innerHTML = markup;
   }
-  
+
   lightbox.refresh();
 };
 
@@ -41,12 +41,12 @@ export function clearGallery() {
 }
 
 export function showLoader() {
-  loader.classList.add("is-visible");
+ if (loader) loader.classList.add("is-visible");
 }
 
 
 export function hideLoader() {
-  loader.classList.remove("is-visible");
+ if (loader) loader.classList.remove("is-visible");
 }
 
 export function showLoadMoreButton() {
