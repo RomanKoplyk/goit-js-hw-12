@@ -59,7 +59,12 @@ async function handleSearch(event) {
         createGallery(data.hits);
 
         const totalPages = Math.ceil(data.totalHits / perPage);
-        if (currentPage < totalPages) {
+        if (currentPage >= totalPages) {
+            iziToast.error({
+                message: "We're sorry, but you've reached the end of search results.",
+                position: 'topRight'
+            });
+        } else {
             showLoadMoreButton();
         }
     }
